@@ -1,0 +1,22 @@
+<div class="container">
+  
+    <h2>{{ title }}</h2>
+    <!--#region map-->
+    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+      <!--#region marker-->
+      <sebm-google-map-marker [latitude]="lat" [longitude]="lng" [title]="'My current location'">
+        <sebm-google-map-info-window>
+          <strong>Contacts:</strong>
+          <p>email: danailvidev@webadventure.org</p>
+        </sebm-google-map-info-window>
+      </sebm-google-map-marker>
+      <!--#endregion-->
+      <!--#region circle-->
+      <sebm-google-map-circle [latitude]="lat + 0.3" [longitude]="lng" [radius]="5000" [fillColor]="'red'" [circleDraggable]="true"
+        [editable]="true">
+        </sebm-google-map-circle>
+        <!--#endregion-->
+    </sebm-google-map>
+    <!--#endregion map-->
+ 
+</div>
