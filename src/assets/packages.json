@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
@@ -44,7 +44,6 @@
     "tslint": "^4.3.1",
     "tslint-loader": "^3.3.0",
     "typescript": "^2.1.5",
-    "webdriver-manager": "10.2.5",
-    "angular2-prettyjson": "^2.0.2"
+    "webdriver-manager": "10.2.5"
   }
 }

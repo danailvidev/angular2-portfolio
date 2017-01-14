@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http'
 import { RouterModule, Routes } from '@angular/router'
 import { GoogleMapModule } from './google-map/google-map.module'
 import { HeroesModule } from './heroes/heroes.module'
+import {HomeModule} from './home/home.module'
 
 import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app.routes'
@@ -19,6 +20,7 @@ import { AppRoutingModule } from './app.routes'
     HttpModule,
     GoogleMapModule,
     HeroesModule,
+    HomeModule,
     AppRoutingModule
   ],
   providers: [],
