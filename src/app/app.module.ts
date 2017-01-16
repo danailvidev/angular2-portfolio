@@ -10,6 +10,8 @@ import {HomeModule} from './home/home.module'
 import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app.routes'
 
+import { MaterialModule } from '@angular/material'
+
 @NgModule({
   declarations: [
     AppComponent
@@ -21,7 +23,8 @@ import { AppRoutingModule } from './app.routes'
     GoogleMapModule,
     HeroesModule,
     HomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
