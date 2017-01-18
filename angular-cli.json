@@ -18,14 +18,11 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.css",
-        "../node_modules/tether/dist/css/tether.min.css"
+        "theme.scss",
+        "app.scss"
       ],
       "scripts": [
-        "../node_modules/tether/dist/js/tether.min.js",
-        "../node_modules/jquery/dist/jquery.min.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.js"
+        
       ],
       "environments": {
         "source": "environments/environment.ts",
