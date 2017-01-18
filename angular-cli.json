@@ -22,7 +22,6 @@
         "app.scss"
       ],
       "scripts": [
-        
       ],
       "environments": {
         "source": "environments/environment.ts",
