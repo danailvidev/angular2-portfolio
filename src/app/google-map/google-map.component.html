@@ -2,7 +2,12 @@
   
     <h2>{{ title }}</h2>
     <!--#region map-->
-    <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+    <sebm-google-map 
+    [latitude]="lat" 
+    [longitude]="lng" 
+    [zoom]="zoom"
+    [styles]="styles"
+    >
       <!--#region marker-->
       <sebm-google-map-marker [latitude]="lat" [longitude]="lng" [title]="'My current location'">
         <sebm-google-map-info-window>
