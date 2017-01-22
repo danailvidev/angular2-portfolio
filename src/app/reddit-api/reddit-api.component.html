@@ -1,0 +1,13 @@
+<md-list>
+  <md-list-item *ngFor="let item of items">
+    <img md-list-avatar *ngIf="item.data.thumbnail" src={{item.data.thumbnail}}>
+    <h2 md-line> {{item.data.title}} </h2>
+    <p md-line>
+      <span><md-icon>thumb_up</md-icon> {{item.data.score}} </span>&nbsp;&nbsp;
+      <span><md-icon>accessibility</md-icon> {{item.data.author}} </span>&nbsp;&nbsp;
+      <span><md-icon>date_range</md-icon> {{item.data.created | date}}</span>&nbsp;&nbsp;
+      <span><md-icon>chat</md-icon> {{item.data.num_comments}}</span>&nbsp;&nbsp;
+    </p>
+    <a md-button (click)="view(item.data)">View</a>
+  </md-list-item>
+</md-list>

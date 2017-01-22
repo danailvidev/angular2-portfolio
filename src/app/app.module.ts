@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
 import { RouterModule, Routes } from '@angular/router'
+
 import { GoogleMapModule } from './google-map/google-map.module'
 import { HeroesModule } from './heroes/heroes.module'
-import {HomeModule} from './home/home.module'
+import { HomeModule } from './home/home.module'
+import { RedditApiModule } from './reddit-api/reddit-api.module'
 
 import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app.routes'
@@ -22,6 +24,7 @@ import { MaterialModule } from '@angular/material'
     HttpModule,
     GoogleMapModule,
     HeroesModule,
+    RedditApiModule,
     HomeModule,
     AppRoutingModule,
     MaterialModule.forRoot(),
