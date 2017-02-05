@@ -8,6 +8,7 @@ import { GoogleMapModule } from './google-map/google-map.module'
 import { HeroesModule } from './heroes/heroes.module'
 import { HomeModule } from './home/home.module'
 import { RedditApiModule } from './reddit-api/reddit-api.module'
+import { ContactsModule } from './contacts/contacts.module'
 
 import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app.routes'
@@ -25,6 +26,7 @@ import { MaterialModule } from '@angular/material'
     GoogleMapModule,
     HeroesModule,
     RedditApiModule,
+    ContactsModule,
     HomeModule,
     AppRoutingModule,
     MaterialModule.forRoot(),

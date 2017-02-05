@@ -33,18 +33,20 @@
   <md-sidenav #start mode="over">
     <md-nav-list>
       <h3>Menu</h3>
+      <a md-list-item routerLink="/" routerLinkActive="active-link">Home</a>
       <a md-list-item routerLink="/googlemap" routerLinkActive="active-link">Google Map</a>
       <a md-list-item routerLink="/heroes" routerLinkActive="active-link">Heroes</a>
       <a md-list-item routerLink="/redditapi" routerLinkActive="active-link">Reddit API</a>
       <button md-menu-item disabled>
     <span>GitHub API</span>
   </button>
+  <button md-menu-item disabled>
+    <span>Football API</span>
+  </button>
     </md-nav-list>
     <md-nav-list>
       <h3>Contacts</h3>
-      <button md-menu-item disabled>
-    <span>Email Me</span>
-  </button>
+      <a md-list-item routerLink="/contacts" routerLinkActive="active-link">Contact Me</a>
     </md-nav-list>
   </md-sidenav>
 
