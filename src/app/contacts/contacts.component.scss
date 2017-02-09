@@ -1,16 +1,19 @@
 @import "../config/sass/config";
-
 $text: #555;
 $invalid: #E91E63;
 $width: 400px;
-$cubic: cubic-bezier(.64,.09,.08,1);
-
-html, body {
+$cubic: cubic-bezier(.64, .09, .08, 1);
+html,
+body {
   overflow-x: hidden;
 }
 
-html, body, form, span, h1 {
-    box-sizing: border-box;
+html,
+body,
+form,
+span,
+h1 {
+  box-sizing: border-box;
 }
 
 h1 {
@@ -18,7 +21,7 @@ h1 {
   background: $primary-color;
   padding: 20px;
   color: white;
-  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.05);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.05);
   border-radius: 3px 3px 0 0;
 }
 
@@ -26,7 +29,7 @@ form {
   font-family: 'roboto', sans-serif;
   width: $width + 60px;
   margin: 50px auto 0;
-  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
   padding: 0 0 40px;
   border-radius: 3px;
   color: $text;
@@ -35,9 +38,7 @@ form {
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   font: inherit;
-  transition: transform 0.3s ease-in-out,
-    font-size 0.3s ease-in-out,
-    visibility 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 input,
@@ -50,17 +51,17 @@ textarea {
   border: none;
   padding: 20px 0 10px;
   border-bottom: solid 1px $primary-color;
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $primary-color 4%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, $primary-color 4%);
   background-position: -$width 0;
   background-size: $width 100%;
   background-repeat: no-repeat;
   transition: background 0.3s $cubic;
   resize: none;
-  overflow: hidden; 
+  overflow: hidden;
   &:focus::-webkit-input-placeholder {
     color: $primary-color;
-  }  
-  &:focus, 
+  }
+  &:focus,
   &:valid {
     box-shadow: none;
     outline: none;
@@ -71,11 +72,11 @@ textarea {
       visibility: visible !important;
       opacity: 1;
     }
-  }  
+  }
 }
 
 input[type="email"] {
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $primary-color 4%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, $primary-color 4%);
   background-position: -400px 0;
   background-repeat: no-repeat;
   transition: border-bottom 0.3s ease, background 0.3s ease;
@@ -86,7 +87,7 @@ input[type="email"] {
     font-size: 0.6em;
     width: $width;
     margin-left: 25px;
-    margin-top:-5px;
+    margin-top: -5px;
     color: white;
     transition: color 0.3s ease-in-out;
   }
@@ -108,7 +109,7 @@ input[type="email"] {
     background-position: 0 0;
     &:not(:valid):not([value=""]) {
       border-bottom: solid 1px $invalid;
-      background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $invalid 4%);
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, $invalid 4%);
     }
   }
   &:not(:focus):not(:valid):not([value=""]) {
@@ -116,8 +117,8 @@ input[type="email"] {
       color: $invalid;
     }
     border-bottom: solid 1px $invalid;
-    background-position: 0 0 ;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $invalid 4%);
+    background-position: 0 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, $invalid 4%);
     &~span.validation-text {
       visibility: visible;
       color: $invalid;
@@ -135,8 +136,7 @@ input[type="email"] {
 
 button {
   font-family: 'roboto', sans-serif;
-  transition: transform 0.2s $cubic,
-     box-shadow 0.2s $cubic;
+  transition: transform 0.2s $cubic, box-shadow 0.2s $cubic;
   border: none;
   background: $primary-color;
   cursor: pointer;
@@ -145,12 +145,13 @@ button {
   width: $width;
   color: white;
   margin: 30px 0 0 25px;
-  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
-  &:hover { 
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 6px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.2);
   }
 }
+
 
 /*a {
   display: inline-block;
@@ -179,7 +180,7 @@ a {
   transition: all 0.2s $cubic;
   font-family: Roboto, sans-serif;
   text-decoration: none;
-  box-shadow: 0 5px 6px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.2);
   i {
     margin-right: 20px;
     transition: margin-right 0.2s $cubic;
@@ -192,4 +193,3 @@ a {
     }
   }
 }
-

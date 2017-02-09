@@ -1,13 +1,13 @@
-<form>
+<form #form="ngForm">
   <h1>You can contact me via email.</h1>
-  <input placeholder="Name" type="text" [(ngModel)]="contactDetail.name" name="name" required>
-  <input placeholder="Email address" type="email" onblur="this.setAttribute('value', this.value);" [(ngModel)]="contactDetail.email"
+  <input autofocus placeholder="Name" type="text" value="" [(ngModel)]="contactDetail.name" name="name" required>
+  <input placeholder="Email address" type="email" value="" onblur="this.setAttribute('value', this.value);" [(ngModel)]="contactDetail.email"
     name="email" required>
     <span class="validation-text">Please enter a valid email address.</span>
     <div class="flex">
-      <textarea placeholder="Message" rows="1" [(ngModel)]="contactDetail.message" name="message" required></textarea>
+      <textarea placeholder="Message" value="" rows="1" [(ngModel)]="contactDetail.message" name="message" #message="ngModel" required></textarea>
     </div>
-    <button (click)="sendMail()">Send</button>
+    <span *ngIf="message.errors && (message.dirty || message.touched)" class="validation-text">Message is required</span>
+    <button [disabled]="!form.valid" (click)="sendMail()">Send</button>
 </form>
 <a href="https://github.com/danailvidev" target="_blank"><i class="material-icons">account_circle</i>GitHub</a>
-<!--method="post" action="mailer.php"-->
