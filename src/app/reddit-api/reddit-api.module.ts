@@ -4,6 +4,7 @@ import { RedditApiComponent } from './reddit-api.component'
 import { RedditDetailComponent } from './reddit-detail/reddit-detail.component'
 import { MaterialModule } from '@angular/material'
 import { RedditApiRoutingModule } from './reddit-api.routes'
+import { FormsModule } from '@angular/forms'
 
 import { RedditService } from './services/reddit.service'
 
@@ -11,7 +12,8 @@ import { RedditService } from './services/reddit.service'
     imports: [
         CommonModule,
         MaterialModule,
-        RedditApiRoutingModule
+        RedditApiRoutingModule,
+        FormsModule
     ],
     declarations: [
         RedditApiComponent,

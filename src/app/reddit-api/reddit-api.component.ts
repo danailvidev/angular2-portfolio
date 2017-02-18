@@ -11,11 +11,25 @@ import { RedditDetailComponent } from './reddit-detail/reddit-detail.component'
 export class RedditApiComponent implements OnInit {
   items: any
   title: any
+  stats: number = 0
+  limit: number
+  category: string
 
-  constructor(private redditService: RedditService, private dialog: MdDialog) { }
+  categories = [
+    { value: 'news', viewValue: 'News' },
+    { value: 'gaming', viewValue: 'Gaming' },
+    { value: 'movies', viewValue: 'Movies' },
+    { value: 'worldnews', viewValue: 'World News' },
+    { value: 'funny', viewValue: 'Funny' },
+    { value: 'popular', viewValue: 'Popular' }
+  ]
+
+  constructor(private redditService: RedditService, private dialog: MdDialog) {
+    this.getDefaults()
+  }
 
   ngOnInit() {
-    this.getPosts('sports', 5)
+    this.getPosts(this.category, this.limit)
   }
 
   getPosts(category, limit) {
@@ -26,14 +40,33 @@ export class RedditApiComponent implements OnInit {
       })
   }
 
-  view(item) {
-    //console.log(item.name)
-    let dialogRef = this.dialog.open(RedditDetailComponent)
-    dialogRef.componentInstance.title = item.author
-    dialogRef.componentInstance.score = item.score
+  getDefaults() {
+    this.category = 'popular'
+    this.limit = 5
+  }
 
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log(result)
+  changeCategory() {
+    this.getPosts(this.category, this.limit)
+  }
+
+  view(item) {
+    console.log(item.permalink)
+    let dialogRef = this.dialog.open(RedditDetailComponent)
+    dialogRef.componentInstance.title = item.title
+    dialogRef.componentInstance.score = item.score
+    dialogRef.componentInstance.permalink = item.permalink
+    dialogRef.componentInstance.imageUrl = item.preview.images[0].source.url
+    dialogRef.afterClosed().subscribe(result => {
+      this.stats++
+    })
+  }
+
+  openSettingsDialog() {
+    //let settingsDialogRef = this.dialog.open(SettingsDialog);
+    // settingsDialogRef.afterClosed().subscribe(result => {
+    //   console.log("working")
+    //   //this.selectedOption = result;
     // });
   }
+
 }
