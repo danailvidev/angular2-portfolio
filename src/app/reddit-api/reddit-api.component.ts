@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core'
 import { RedditService } from './services/reddit.service'
 import { MdDialog, MdDialogRef } from '@angular/material'
 import { RedditDetailComponent } from './reddit-detail/reddit-detail.component'
+import { SettingsComponent } from './settings-dialog/settings.component'
+import { CATEGORIES } from './mock-categories'
 
 @Component({
   selector: 'app-reddit-api',
@@ -14,15 +16,7 @@ export class RedditApiComponent implements OnInit {
   stats: number = 0
   limit: number
   category: string
-
-  categories = [
-    { value: 'news', viewValue: 'News' },
-    { value: 'gaming', viewValue: 'Gaming' },
-    { value: 'movies', viewValue: 'Movies' },
-    { value: 'worldnews', viewValue: 'World News' },
-    { value: 'funny', viewValue: 'Funny' },
-    { value: 'popular', viewValue: 'Popular' }
-  ]
+  categories = CATEGORIES
 
   constructor(private redditService: RedditService, private dialog: MdDialog) {
     this.getDefaults()
@@ -35,14 +29,22 @@ export class RedditApiComponent implements OnInit {
   getPosts(category, limit) {
     this.redditService.getPosts(category, limit)
       .subscribe(res => {
-        console.log('items', res)
         this.items = res.data.children
       })
   }
 
   getDefaults() {
-    this.category = 'popular'
-    this.limit = 5
+    if (localStorage.getItem('category') != null) {
+      this.category = localStorage.getItem('category')
+    } else {
+      this.category = 'popular'
+    }
+
+    if (localStorage.getItem('limit') != null) {
+      this.limit = Number(localStorage.getItem('limit'))
+    } else {
+      this.limit = 5
+    }
   }
 
   changeCategory() {
@@ -50,7 +52,6 @@ export class RedditApiComponent implements OnInit {
   }
 
   view(item) {
-    console.log(item.permalink)
     let dialogRef = this.dialog.open(RedditDetailComponent)
     dialogRef.componentInstance.title = item.title
     dialogRef.componentInstance.score = item.score
@@ -62,11 +63,6 @@ export class RedditApiComponent implements OnInit {
   }
 
   openSettingsDialog() {
-    //let settingsDialogRef = this.dialog.open(SettingsDialog);
-    // settingsDialogRef.afterClosed().subscribe(result => {
-    //   console.log("working")
-    //   //this.selectedOption = result;
-    // });
+    let settingsDialogRef = this.dialog.open(SettingsComponent)
   }
-
 }

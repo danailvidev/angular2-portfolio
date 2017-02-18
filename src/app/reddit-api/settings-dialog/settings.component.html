@@ -1,0 +1,17 @@
+<h2>Settings</h2>    
+      
+  <md-select placeholder="Default Category" [(ngModel)]="category" name="category">
+    <md-option *ngFor="let category of categories" [value]="category.value" >
+      {{category.viewValue}}
+    </md-option>
+  </md-select>
+
+<md-divider style="height:25px;"></md-divider> 
+<md-select placeholder="Default Limit" [(ngModel)]="limit" name="limit">
+    <md-option *ngFor="let limit of limits" [value]="limit.value" >
+      {{limit.viewValue}}
+    </md-option>
+  </md-select>
+<md-divider style="height:15px;"></md-divider> 
+
+<button md-raised-button (click)="setDefaults()" align="center">Save Settings</button>

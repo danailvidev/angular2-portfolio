@@ -1,3 +1,5 @@
+   @import '../config/sass/config';
+
    md-list.items-list md-icon {
      font-size: 18px;
      color: grey;
@@ -10,4 +12,6 @@
    
    button.settings {
      float: right;
+     background-color: $accent-color;
+     color: $primary-text-color;
    }

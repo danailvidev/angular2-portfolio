@@ -8,7 +8,7 @@
   <p> Selected category: {{category}} </p>
 </form>
 <button class="settings" md-button (click)="openSettingsDialog()">Settings</button>
-<hr style="clear: both;">
+<md-divider style="clear: both;"></md-divider>
 <md-list class="items-list">
   <md-list-item *ngFor="let item of items">
     <img md-list-avatar *ngIf="item.data.thumbnail" src={{item.data.thumbnail}}>
@@ -19,7 +19,7 @@
       <span><md-icon>date_range</md-icon> {{item.data.created * 1000 | date }}</span>&nbsp;&nbsp;
       <span><md-icon>chat</md-icon> {{item.data.num_comments}}</span>&nbsp;&nbsp;
     </p>
-    <a md-button (click)="view(item.data)">View</a>
+    <a md-raised-button (click)="view(item.data)">View</a>
   </md-list-item>
 </md-list>
 <!--<br>
