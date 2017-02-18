@@ -7,19 +7,19 @@
 
   <p> Selected category: {{category}} </p>
 </form>
-<button class="settings" md-button (click)="openSettingsDialog()">Settings</button>
+<button mdTooltip="Settings Menu" mdTooltipPosition="above" class="settings" md-button (click)="openSettingsDialog()">Settings</button>
 <md-divider style="clear: both;"></md-divider>
 <md-list class="items-list">
   <md-list-item *ngFor="let item of items">
     <img md-list-avatar *ngIf="item.data.thumbnail" src={{item.data.thumbnail}}>
     <h2 md-line> {{item.data.title}} </h2>
     <p md-line>
-      <span><md-icon>thumb_up</md-icon> {{item.data.score}} </span>&nbsp;&nbsp;
-      <span><md-icon>accessibility</md-icon> {{item.data.author}} </span>&nbsp;&nbsp;
-      <span><md-icon>date_range</md-icon> {{item.data.created * 1000 | date }}</span>&nbsp;&nbsp;
-      <span><md-icon>chat</md-icon> {{item.data.num_comments}}</span>&nbsp;&nbsp;
+      <span mdTooltip="Score" mdTooltipPosition="above"><md-icon>thumb_up</md-icon> {{item.data.score}} </span>&nbsp;&nbsp;
+      <span mdTooltip="Author" mdTooltipPosition="above"><md-icon>accessibility</md-icon> {{item.data.author}} </span>&nbsp;&nbsp;
+      <span mdTooltip="Date Created" mdTooltipPosition="above"><md-icon>date_range</md-icon> {{item.data.created * 1000 | date }}</span>&nbsp;&nbsp;
+      <span mdTooltip="Number of comments" mdTooltipPosition="above"><md-icon>chat</md-icon> {{item.data.num_comments}}</span>&nbsp;&nbsp;
     </p>
-    <a md-raised-button (click)="view(item.data)">View</a>
+    <a mdTooltip="Detail View" mdTooltipPosition="above" md-raised-button (click)="view(item.data)">View</a>
   </md-list-item>
 </md-list>
 <!--<br>
