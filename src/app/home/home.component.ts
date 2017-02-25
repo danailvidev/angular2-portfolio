@@ -13,14 +13,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-  packages: Object
+  //packages: Object
 
   constructor(private http: Http) {
-    this.packages = this.getFriends()
+    //this.packages = this.getFriends()
   }
 
-  getFriends() {
-    return this.http.request('./assets/packages.json')
-      .subscribe(res => this.packages = res.json())
-  }
+  // getFriends() {
+  //   return this.http.request('./assets/packages.json')
+  //     .subscribe(res => this.packages = res.json())
+  // }
 }
